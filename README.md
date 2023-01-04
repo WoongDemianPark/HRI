@@ -75,7 +75,7 @@
 
 # 2. Mic Array Module Setting
 
-## 2.1. Download the "seeed-voicecard" module in workspace folder.
+## 2.1. Download the "seeed-voicecard" module in HRI folder.
 
 * This module is only used when a firmware update is required.
 </br>
