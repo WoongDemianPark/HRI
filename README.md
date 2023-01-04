@@ -97,7 +97,7 @@
   
 * If the 'usb' module is not installed correctly, install it manually.
   ```
-  $ conda install -c conda-forge pyusb
+  $ sudo pip3 install pyusb
   ```
 
 * Connect the microphone module to the NUC PC using a USB cable.
