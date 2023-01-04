@@ -65,9 +65,9 @@
   ```
 </br>
 
-## 1.4. Make "workspace" folder in Home.
+## 1.4. Make or pull "HRI" folder in Home.
 
-* All modules worked and ran from workspace folder within Home path.
+* All modules worked and ran from HRI folder within Home path.
 </br>
 
 ----------
