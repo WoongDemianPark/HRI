@@ -87,7 +87,7 @@
 
 </br>
 
-# 4. Face Detection & Emo Recognition Module Setting
+# 4. Face & Emotion Recognition Module Setting
 
 [Follow the Realtime Face Detection and Emotion Recognition Module setting guide.](https://github.com/WoongDemianPark/HRI/tree/main/FaceDetEmo)
 
