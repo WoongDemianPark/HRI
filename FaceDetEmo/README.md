@@ -17,7 +17,7 @@ CPU: Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
 Python: 3.8
 ```
 
-## How to prepare.
+## How to prepare
 Install custom library of Deepface.
 ```
 cd ./libs/deepface_mod
@@ -42,7 +42,7 @@ conda install -c anaconda scikit-learn
 pip install networks
 ```
 
-## How to run.
+## How to run
 it is possible that an extra library needs to be installed to run this source code.
 ```
 python main.py
