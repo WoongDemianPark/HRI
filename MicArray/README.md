@@ -14,7 +14,11 @@ The ReSpeaker USB 4 Mic Array is the successor of the ReSpeaker USB 6+1 Mic Arra
 + 16000 sample rate
 
 ## Install Drivers
-[Follow the drivers installation guide](https://github.com/WoongDemianPark/HRI/tree/main/MicArray/driver)
+```
+sudo ./driver/install.sh
+sudo reboot
+```
+[Follow the drivers installation guide to see more details](https://github.com/WoongDemianPark/HRI/tree/main/MicArray/driver)
 
 ## Device Firmware Update
 The Microphone Array supports USB DFU. We have [a python script - dfu.py](https://github.com/WoongDemianPark/HRI/blob/main/MicArray/dfu.py) to do that.
