@@ -28,9 +28,12 @@ python dfu.py --download 6_channels_firmware.bin        # with sudo if usb permi
 |---------------------------------|----------|-----------------------------------------------------------------------------------------------|
 | 1_channel_firmware.bin | 1 | processed audio for ASR |
 | 6_channels_firmware.bin | 6 | channel 0: processed audio for ASR, channel 1-4: 4 microphones' raw data, channel 5: playback |
+
 </br>
+
 ----------
 </br>
+
 # Usage
 
 ## Create virtual environment for the module.
