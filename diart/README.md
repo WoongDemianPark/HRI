@@ -134,7 +134,6 @@
 * Diart implements a hyper-parameter optimizer based on [optuna](https://optuna.readthedocs.io/en/stable/index.html) that allows you to tune any pipeline to any dataset.
 
 ### From the command line
-
 	```shell
 	diart.tune /wav/dir --reference /rttm/dir --output /out/dir
 	```
@@ -142,7 +141,6 @@
 * See `diart.tune -h` for more options.
 
 ### From python
-
 	```python
 	from diart.optim import Optimizer, TauActive, RhoUpdate, DeltaNew
 	from diart.pipelines import PipelineConfig
