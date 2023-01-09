@@ -1,4 +1,6 @@
-# Installation
+# Real-time Speaker Diarization Module
+
+## How to prepare
 
 * Download or clone the "diart" module in HRI folder.
 
@@ -64,11 +66,11 @@
 
 </br>
 
-# Usage
+## How to run
 
-## Stream audio
+### Stream audio
 
-### From the command line
+#### From the command line
 
 A recorded conversation:
 
@@ -84,7 +86,7 @@ diart.stream microphone
 
 See `diart.stream -h` for more options.
 
-### From python
+#### From python
 
 Run a real-time speaker diarization pipeline over an audio stream with `RealTimeInference`:
 
@@ -102,149 +104,14 @@ inference(pipeline, audio_source)
 
 For faster inference and evaluation on a dataset we recommend to use `Benchmark` instead (see our notes on [reproducibility](#reproducibility)).
 
-## Add your model
-
-Third-party segmentation and embedding models can be integrated seamlessly by subclassing `SegmentationModel` and `EmbeddingModel`:
-
-```python
-import torch
-from typing import Optional
-from diart.models import EmbeddingModel
-from diart.pipelines import PipelineConfig, OnlineSpeakerDiarization
-from diart.sources import MicrophoneAudioSource
-from diart.inference import RealTimeInference
-
-class MyEmbeddingModel(EmbeddingModel):
-    def __init__(self):
-	super().__init__()
-	self.my_pretrained_model = load("my_model.ckpt")
-    
-    def __call__(
-	self,
-	waveform: torch.Tensor,
-	weights: Optional[torch.Tensor] = None
-    ) -> torch.Tensor:
-	return self.my_pretrained_model(waveform, weights)
-
-config = PipelineConfig(embedding=MyEmbeddingModel())
-pipeline = OnlineSpeakerDiarization(config)
-mic = MicrophoneAudioSource(config.sample_rate)
-inference = RealTimeInference("/out/dir")
-inference(pipeline, mic)
-```
-
-## Tune hyper-parameters
-
-Diart implements a hyper-parameter optimizer based on [optuna](https://optuna.readthedocs.io/en/stable/index.html) that allows you to tune any pipeline to any dataset.
-
-### From the command line
-
-```shell
-diart.tune /wav/dir --reference /rttm/dir --output /out/dir
-```
-
-See `diart.tune -h` for more options.
-
-### From python
-
-```python
-from diart.optim import Optimizer, TauActive, RhoUpdate, DeltaNew
-from diart.pipelines import PipelineConfig
-from diart.inference import Benchmark
-
-# Benchmark runs and evaluates the pipeline on a dataset
-benchmark = Benchmark("/wav/dir", "/rttm/dir", "/out/dir/tmp", show_report=False)
-# Base configuration for the pipeline we're going to tune
-base_config = PipelineConfig()
-# Hyper-parameters to optimize
-hparams = [TauActive, RhoUpdate, DeltaNew]
-# Optimizer implements the optimization loop
-optimizer = Optimizer(benchmark, base_config, hparams, "/out/dir")
-# Run optimization
-optimizer.optimize(num_iter=100, show_progress=True)
-```
-
-This will use `/out/dir/tmp` as a working directory and write results to an sqlite database in `/out/dir`.
-
-### Distributed optimization
-
-For bigger datasets, it is sometimes more convenient to run multiple optimization processes in parallel.
-To do this, create a study on a [recommended DBMS](https://optuna.readthedocs.io/en/stable/tutorial/10_key_features/004_distributed.html#sphx-glr-tutorial-10-key-features-004-distributed-py) (e.g. MySQL or PostgreSQL) making sure that the study and database names match:
-
-```shell
-mysql -u root -e "CREATE DATABASE IF NOT EXISTS example"
-optuna create-study --study-name "example" --storage "mysql://root@localhost/example"
-```
-
-Then you can run multiple identical optimizers pointing to the database:
-
-```shell
-diart.tune /wav/dir --reference /rttm/dir --output /out/dir --storage mysql://root@localhost/example
-```
-
-If you are using the python API, make sure that worker directories are different to avoid concurrency issues:
-
-```python
-from diart.optim import Optimizer
-from diart.inference import Benchmark
-from optuna.samplers import TPESampler
-import optuna
-
-ID = 0  # Worker identifier
-base_config, hparams = ...
-benchmark = Benchmark("/wav/dir", "/rttm/dir", f"/out/dir/worker-{ID}", show_report=False)
-study = optuna.load_study("example", "mysql://root@localhost/example", TPESampler())
-optimizer = Optimizer(benchmark, base_config, hparams, study)
-optimizer.optimize(num_iter=100, show_progress=True)
-```
-
-## Build pipelines
-
-For a more advanced usage, diart also provides building blocks that can be combined to create your own pipeline.
-Streaming is powered by [RxPY](https://github.com/ReactiveX/RxPY), but the `blocks` module is completely independent and can be used separately.
-
-### Example
-
-Obtain overlap-aware speaker embeddings from a microphone stream:
-
-```python
-import rx.operators as ops
-import diart.operators as dops
-from diart.sources import MicrophoneAudioSource
-from diart.blocks import SpeakerSegmentation, OverlapAwareSpeakerEmbedding
-
-segmentation = SpeakerSegmentation.from_pyannote("pyannote/segmentation")
-embedding = OverlapAwareSpeakerEmbedding.from_pyannote("pyannote/embedding")
-sample_rate = segmentation.model.get_sample_rate()
-mic = MicrophoneAudioSource(sample_rate)
-
-stream = mic.stream.pipe(
-    # Reformat stream to 5s duration and 500ms shift
-    dops.regularize_audio_stream(sample_rate),
-    ops.map(lambda wav: (wav, segmentation(wav))),
-    ops.starmap(embedding)
-).subscribe(on_next=lambda emb: print(emb.shape))
-
-mic.read()
-```
-
-Output:
-
-```
-torch.Size([4, 512])
-torch.Size([4, 512])
-torch.Size([4, 512])
-...
-```
-
-# Powered by research
+## Powered by research
 
 Diart is the official implementation of the paper *[Overlap-aware low-latency online speaker diarization based on end-to-end local segmentation](/paper.pdf)* by [Juan Manuel Coria](https://juanmc2005.github.io/), [Hervé Bredin](https://herve.niderb.fr), [Sahar Ghannay](https://saharghannay.github.io/) and [Sophie Rosset](https://perso.limsi.fr/rosset/).
 
 
 > We propose to address online speaker diarization as a combination of incremental clustering and local diarization applied to a rolling buffer updated every 500ms. Every single step of the proposed pipeline is designed to take full advantage of the strong ability of a recently proposed end-to-end overlap-aware segmentation to detect and separate overlapping speakers. In particular, we propose a modified version of the statistics pooling layer (initially introduced in the x-vector architecture) to give less weight to frames where the segmentation model predicts simultaneous speakers. Furthermore, we derive cannot-link constraints from the initial segmentation step to prevent two local speakers from being wrongfully merged during the incremental clustering step. Finally, we show how the latency of the proposed approach can be adjusted between 500ms and 5s to match the requirements of a particular use case, and we provide a systematic analysis of the influence of latency on the overall performance (on AMI, DIHARD and VoxConverse).
 
-# Citation
+## Citation
 
 If you found diart useful, please make sure to cite our paper:
 
@@ -259,7 +126,7 @@ If you found diart useful, please make sure to cite our paper:
 }
 ```
 
-#  License
+## License
 
 ```
 MIT License
