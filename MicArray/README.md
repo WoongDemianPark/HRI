@@ -47,7 +47,7 @@ pip install -r requirements.txt
 sudo pip3 install pyusb
 ```
 
-## Connect the microphone module to the NUC PC using a USB cable.
+## Connect the ReSpeaker USB 4 Mic Array to the NUC PC using a USB cable.
 
 run "doa.py' for Direction of Arrival.
 ```
