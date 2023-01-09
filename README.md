@@ -84,3 +84,13 @@
 # 3. Speaker Diarization (diart) Module Setting
 
 [Follow the Speaker Diarazation (diart) Module setting guide.](https://github.com/WoongDemianPark/HRI/tree/main/diart)
+
+</br>
+
+# 4. Face Detection and Emotion Recognition Module Setting
+
+[Follow the Face Detection and Emotion Recognition Module setting guide.](https://github.com/WoongDemianPark/HRI/tree/main/FaceDetEmo)
+
+</br>
+
+
