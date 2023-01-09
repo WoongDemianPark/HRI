@@ -12,7 +12,7 @@
 
 * Run the downloaded Install File.
   ```
-  $ bash "downloaded Install File name".sh
+  bash "downloaded Install File name".sh
   ```
 
 * Press Enter, answer 'yes', press Enter again to confirm the location.
@@ -21,7 +21,7 @@
 
 * Update the bashrc
   ```
-  $ source ~/.bashrc
+  source ~/.bashrc
   ```
 
 * The installation is complete if (base) appears before the command.    
@@ -31,18 +31,18 @@
 
 * Update system repository.
   ```
-  $ sudo apt update
-  $ sudo apt upgrade -y
+  sudo apt update
+  sudo apt upgrade -y
   ```
 
 * Install Python3 pip.
   ```
-  $ sudo apt install python3-pip -y
+  sudo apt install python3-pip -y
   ```
 
-* Confirm the Version and Installation
+* Confirm the Pip Version and Installation
   ```
-  $ pip3 --version
+  pip3 --version
   ```
 </br>
 
@@ -50,22 +50,22 @@
 
 * Update system repository.
   ```
-  $ sudo apt update
-  $ sudo apt upgrade -y
+  sudo apt update
+  sudo apt upgrade -y
   ```
 
 * Install git.
   ```
-  $ sudo apt install git
+  sudo apt install git -y
   ```
 
-* Confirm the Version and Installation.
+* Confirm the Git Version and Installation.
   ```
-  $ git --version
+  git --version
   ```
 </br>
 
-## 1.4. Make or pull "HRI" folder in Home.
+## 1.4. Make or Clone "HRI" folder in Home.
 
 * All modules worked and ran from HRI folder within Home path.
 </br>
@@ -75,7 +75,7 @@
 
 # 2. Mic Array Module Setting
 
-## 2.1. Download the "Seeed-Voicecard" module in HRI folder.
+## 2.1. Download or clone the "seeed-voicecard" module in HRI folder.
 
 * This module is only used when a firmware update is required.
 </br>
@@ -84,32 +84,38 @@
 
 * Download the "MicArray" module in HRI folder.
 
+* Download or clone the "MicArray" module in HRI folder.
+
+* Download the "MicArray" module in HRI folder.
+
+* Download the "MicArray" module in HRI folder.
+
 * Create virtual environment for the module.
   ```
-  $ conda create -n MicArray python=3.9
-  $ conda activate MicArray
+  conda create -n MicArray python=3.9
+  conda activate MicArray
   ```
   
-* Install requirements
+* Install requirements.
   ```
-  $ pip install -r requirements.txt
+  pip install -r requirements.txt
   ```
   
 * If the 'usb' module is not installed correctly, install it manually.
   ```
-  $ sudo pip3 install pyusb
+  sudo pip3 install pyusb
   ```
 
 * Connect the microphone module to the NUC PC using a USB cable.
 
 * run "doa.py' for Direction of Arrival.
   ```
-  $ sudo python3 doa.py
+  sudo python3 doa.py
   ```
 
 * run "vad.py' for Voice Activity Detection.
   ```
-  $ sudo python3 vad.py
+  sudo python3 vad.py
   ```
 </br>
 
@@ -186,4 +192,3 @@
   ```
   diart.stream microphone
   ```
-
