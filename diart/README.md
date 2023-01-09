@@ -257,8 +257,6 @@ If you found diart useful, please make sure to cite our paper:
 
 ##  Reproducibility
 
-![Results table](/table1.png)
-
 Diart aims to be lightweight and capable of real-time streaming in practical scenarios.
 Its performance is very close to what is reported in the paper (and sometimes even a bit better).
 
