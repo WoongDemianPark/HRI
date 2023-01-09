@@ -18,35 +18,35 @@ Python: 3.8
 ```
 
 ## How to prepare.
-* Install custom library of Deepface.
-	```
-	cd ./libs/deepface_mod
-	python setup.py install
-	```
+Install custom library of Deepface.
+```
+cd ./libs/deepface_mod
+python setup.py install
+```
 
-* Download FER (Facial Expression Recognition) model and save it into './models/RAF-DB/'
+Download FER (Facial Expression Recognition) model and save it into './models/RAF-DB/'
 *IF THERE IS NO DIRECTORY, JUST MAKE IT'.
-	```
-	Download link: https://drive.google.com/file/d/1Gpdt7QhKKuoc8uTpJLZTGHIALsL6nz8H/view?usp=sharing
-	```
+```
+Download link: https://drive.google.com/file/d/1Gpdt7QhKKuoc8uTpJLZTGHIALsL6nz8H/view?usp=sharing
+```
 
-* Install PyTorch.
-	```
-	https://pytorch.kr/get-started/locally/
-	conda install pytorch torchvision torchaudio cpuonly -c pytorch
-	```
+Install PyTorch.
+```
+https://pytorch.kr/get-started/locally/
+conda install pytorch torchvision torchaudio cpuonly -c pytorch
+```
 
-* Install Requirements.
-	```
-	conda install -c anaconda scikit-learn
-	pip install networks
-	```
+Install Requirements.
+```
+conda install -c anaconda scikit-learn
+pip install networks
+```
 
-## How to run demo
-* it is possible that an extra library needs to be installed to run this source code.
-	```
-	python main.py
-	```
+## How to run.
+it is possible that an extra library needs to be installed to run this source code.
+```
+python main.py
+```
 
 ## Citation
 
