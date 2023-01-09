@@ -68,6 +68,11 @@
 ## 1.4. Make or Clone "HRI" folder in Home.
 
 * All modules worked and ran from HRI folder within Home path.
+  ```
+  git clone https://github.com/WoongDemianPark/HRI.git
+  cd HRI
+  ```
+
 </br>
 
 ----------
