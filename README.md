@@ -75,16 +75,10 @@
 
 </br>
 
-----------
-</br>
-
 # 2. MicArray Module Setting
 
 [Follow the MicArray Module setting guide.](https://github.com/WoongDemianPark/HRI/tree/main/MicArray)
 
-</br>
-
-----------
 </br>
 
 # 3. Speaker Diarization (diart) Module Setting
