@@ -1,89 +1,66 @@
-<br/>
-
-<p align="center">
-<img src="/logo.png" title="Logo" />
-</p>
-
-<p align="center">
-<img alt="PyPI Version" src="https://img.shields.io/pypi/v/diart?color=g">
-<img alt="PyPI Downloads" src="https://static.pepy.tech/personalized-badge/diart?period=total&units=international_system&left_color=grey&right_color=brightgreen&left_text=downloads">
-<img alt="Top language" src="https://img.shields.io/github/languages/top/juanmc2005/StreamingSpeakerDiarization?color=g">
-<img alt="Code size in bytes" src="https://img.shields.io/github/languages/code-size/juanmc2005/StreamingSpeakerDiarization?color=g">
-<img alt="License" src="https://img.shields.io/github/license/juanmc2005/StreamingSpeakerDiarization?color=g">
-</p>
-
-<div align="center">
-  <h4>
-    <a href="#installation">
-      Installation
-    </a>
-    <span> | </span>
-    <a href="#stream-audio">
-      Stream audio
-    </a>
-    <span> | </span>
-    <a href="#add-your-model">
-      Add your model
-    </a>
-    <span> | </span>
-    <a href="#tune-hyper-parameters">
-      Tune hyper-parameters
-    </a>
-    <span> | </span>
-    <a href="#build-pipelines">
-      Build pipelines
-    </a>
-    <br/>
-    <a href="#powered-by-research">
-      Research
-    </a>
-    <span> | </span>
-    <a href="#citation">
-      Citation
-    </a>
-    <span> | </span>
-    <a href="#reproducibility">
-      Reproducibility
-    </a>
-  </h4>
-</div>
-
-<br/>
-
-<p align="center">
-<img width="100%" src="/demo.gif" title="Real-time diarization example" />
-</p>
-
 ## Installation
 
-1) Create environment:
+* Download or clone the "diart" module in HRI folder.
 
-```shell
-conda create -n diart python=3.8
-conda activate diart
-```
+* Create virtual environment for the module.
+  ```
+  conda create -n diart python=3.9
+  conda activate diart
+  ```
 
-2) Install `PortAudio` and `soundfile`:
+* Install requirements.
+  ```
+  pip install -r requirements.txt
+  ```
 
-```shell
-conda install portaudio
-conda install pysoundfile -c conda-forge
-```
+* Install CUDA.
+  ```
+  sudo apt-get update
+  sudo apt-get -y install nvidia-cuda-toolkit
+  ```
 
-3) [Install PyTorch](https://pytorch.org/get-started/locally/#start-locally)
+* Confirm the CUDA Version and Installation.
+  ```
+  nvcc -V
+  ```
 
-4) Install pyannote.audio 2.0 (currently no official release)
+* Install PyTorch for the installed CUDA version.
+  * https://pytorch.org/get-started/locally/#start-locally
+  * CPUOnly version was used for the NUC PC.
+  ```
+  conda install pytorch torchvision torchaudio cpuonly -c pytorch
+  ```
+  
+* Install PortAudio and Soundfile.
+  ```
+  conda install portaudio
+  pip install PySoundFile
+  conda install pysoundfile -c conda-forge
+  ```
 
-```shell
-pip install git+https://github.com/pyannote/pyannote-audio.git@2.0.1#egg=pyannote-audio
-```
+* Install Pyannote.audio 2.0.
+  ```
+  pip install pyannote.audio
+  pip install git+https://github.com/pyannote/pyannote-audio.git@2.0.1#egg=pyannote-audio
+  ```
 
-**Note:** starting from version 0.4, installing pyannote.audio is mandatory to run the default system or to use pyannote-based models. In any other case, this step can be ignored.
+* Install Diart Module.
+  ```
+  pip install diart
+  ```
 
-5) Install diart:
-```shell
-pip install diart
-```
+* Install the Hub library.
+  ```
+  conda install -c conda-forge huggingface_hub
+  ```
+
+* Create the account on Huggingface and get Access Tokens.
+  * https://huggingface.co/
+
+* Once you have your User Access Token, run the following command in your terminal.
+  ```
+  huggingface-cli login
+  ```
 
 ## Stream audio
 
@@ -263,10 +240,6 @@ Diart is the official implementation of the paper *[Overlap-aware low-latency on
 
 > We propose to address online speaker diarization as a combination of incremental clustering and local diarization applied to a rolling buffer updated every 500ms. Every single step of the proposed pipeline is designed to take full advantage of the strong ability of a recently proposed end-to-end overlap-aware segmentation to detect and separate overlapping speakers. In particular, we propose a modified version of the statistics pooling layer (initially introduced in the x-vector architecture) to give less weight to frames where the segmentation model predicts simultaneous speakers. Furthermore, we derive cannot-link constraints from the initial segmentation step to prevent two local speakers from being wrongfully merged during the incremental clustering step. Finally, we show how the latency of the proposed approach can be adjusted between 500ms and 5s to match the requirements of a particular use case, and we provide a systematic analysis of the influence of latency on the overall performance (on AMI, DIHARD and VoxConverse).
 
-<p align="center">
-<img height="400" src="/figure1.png" title="Visual explanation of the system" width="325" />
-</p>
-
 ## Citation
 
 If you found diart useful, please make sure to cite our paper:
@@ -357,5 +330,3 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-
-<p>Logo generated by <a href="https://www.designevo.com/" title="Free Online Logo Maker">DesignEvo free logo designer</a></p>
