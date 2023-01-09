@@ -64,8 +64,6 @@
   huggingface-cli login
   ```
 
-</br>
-
 ## How to run
 
 ### Stream audio
