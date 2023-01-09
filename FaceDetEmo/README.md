@@ -1,5 +1,5 @@
-# Real-time face detection and expression recognition
-Real time face detection and expression recognition
+# Real-time Face Detection and Emotion Recognition Module
+Real-time Face Detection and Emotion Recognition Module
 
 This souce code is highly encouraged from [`Deepface`](https://github.com/serengil/deepface).
 
@@ -8,47 +8,45 @@ For facial expression recognition, [`Shi et al.,`](https://arxiv.org/abs/2103.10
 
 The execution speed (face detection + emotion recognition) is approx 0.06 sec per frame. To measure the execution speed, we basically assumed that only one face is detected. However, this source code also can work with multiple results of face detection.
 
-This source code have been implimented based on Ubuntu 20.04 (64bit)
+This source code have been implimented based on Ubuntu 22.04 (64bit)
 
 
 Running environment is as follows:
 ```
-GPU: Geforce RTX 2080ti
-Driver: 460.73.01
-CUDA version: 11.2
+CPU: Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
 Python: 3.8
 ```
 
 ## How to prepare.
-Install custom library of Deepface.
-```
-cd ./libs/deepface_mod
-python setup.py install
-```
+* Install custom library of Deepface.
+	```
+	cd ./libs/deepface_mod
+	python setup.py install
+	```
 
-Download FER (Facial Expression Recognition) model and save it into './models/RAF-DB/'
+* Download FER (Facial Expression Recognition) model and save it into './models/RAF-DB/'
 *IF THERE IS NO DIRECTORY, JUST MAKE IT'
-```
-Download link: https://drive.google.com/file/d/1Gpdt7QhKKuoc8uTpJLZTGHIALsL6nz8H/view?usp=sharing
-```
+	```
+	Download link: https://drive.google.com/file/d/1Gpdt7QhKKuoc8uTpJLZTGHIALsL6nz8H/view?usp=sharing
+	```
 
-Install PyTorch
-```
-https://pytorch.kr/get-started/locally/
-conda install pytorch torchvision torchaudio cpuonly -c pytorch
-```
+* Install PyTorch
+	```
+	https://pytorch.kr/get-started/locally/
+	conda install pytorch torchvision torchaudio cpuonly -c pytorch
+	```
 
-Install Requirements
-```
-conda install -c anaconda scikit-learn
-pip install networks
-```
+* Install Requirements
+	```
+	conda install -c anaconda scikit-learn
+	pip install networks
+	```
 
 ## How to run demo
-```
-python main.py
-```
-*it is possible that an extra library needs to be installed to run this source code.
+	```
+	python main.py
+	```
+	*it is possible that an extra library needs to be installed to run this source code.
 
 ## Citation
 
