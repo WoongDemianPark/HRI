@@ -95,7 +95,7 @@
 
 # 5. Robot Facial Expression Module Setting
 
-~~~ Work in progress ~~~
+Work in progress
 
 [Follow the Robot Facial Expression Module setting guide.](https://github.com/WoongDemianPark/HRI/tree/main/FacialExpression)
 
