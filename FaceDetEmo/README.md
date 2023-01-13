@@ -14,7 +14,7 @@ This source code have been implimented based on Ubuntu 22.04 (64bit)
 Running environment is as follows:
 ```
 CPU: Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
-Python: 3.8
+Python: 3.9
 ```
 
 ## How to prepare
@@ -24,22 +24,23 @@ cd ./libs/deepface_mod
 python setup.py install
 ```
 
+Install Requirements.
+```
+conda install -c anaconda scikit-learn
+pip install networks tqdm
+```
+
 Download FER (Facial Expression Recognition) model and save it into './models/RAF-DB/'
 *IF THERE IS NO DIRECTORY, JUST MAKE IT'.
 ```
 Download link: https://drive.google.com/file/d/1Gpdt7QhKKuoc8uTpJLZTGHIALsL6nz8H/view?usp=sharing
 ```
 
-Install PyTorch.
+Install PyTorch (Matching with CUDA version).
 ```
+nvcc --version
 https://pytorch.kr/get-started/locally/
-conda install pytorch torchvision torchaudio cpuonly -c pytorch
-```
-
-Install Requirements.
-```
-conda install -c anaconda scikit-learn
-pip install networks
+conda install pytorch torchvision torchaudio cudatoolkit=11.5 -c pytorch -c conda-forge
 ```
 
 ## How to run

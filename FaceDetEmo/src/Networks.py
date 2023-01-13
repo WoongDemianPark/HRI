@@ -58,7 +58,8 @@ class Amend_raf(nn.Module):  # moren
         self.alpha = nn.Parameter(torch.tensor([1.0]))
 
     def forward(self, x):
-        mask = torch.tensor([]).cuda()
+        # mask = torch.tensor([]).cuda()
+        mask = torch.tensor([]).cpu()
         createVar = locals()
         for i in range(x.size(1)):
             createVar['x' + str(i)] = torch.unsqueeze(x[:, i], 1)
