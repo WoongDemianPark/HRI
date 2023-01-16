@@ -95,7 +95,7 @@
 
 # 5. Robot Facial Expression Module Setting
 
-Work in progress
+Work in progress (for paper citations)
 
 [Follow the Robot Facial Expression Module setting guide.](https://github.com/WoongDemianPark/HRI/tree/main/FacialExpression)
 
@@ -103,7 +103,7 @@ Work in progress
 
 # 6. Speech to Text Module Setting
 
-Work in progress
+Work in progress (for paper citations)
 
 [Follow the Speech to Text Module setting guide.](https://github.com/WoongDemianPark/HRI/tree/main/STT)
 
