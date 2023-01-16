@@ -1,10 +1,7 @@
 # Robot Facial Expression Module
 Robot Facial Expression Module
 
-Work in Progress.
-
 This source code have been implimented based on Ubuntu 22.04 (64bit)
-
 
 Running environment is as follows:
 ```
@@ -16,6 +13,7 @@ Python: 3.9
 Create Virtual Environment.
 ```
 conda create -n FacialExpression python=3.9
+conda activate FacialExpression
 ```
 
 Download Facial Animation files and save it into './FacialExpression/animation/'
@@ -25,7 +23,7 @@ Download link: work in progress
 ```
 
 ## How to run
-it is possible that an extra library needs to be installed to run this source code.
+It is possible that an extra library needs to be installed to run this source code.
 ```
 python main.py
 ```
