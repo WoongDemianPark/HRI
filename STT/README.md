@@ -1,10 +1,7 @@
 # Speech to Text Module
 Speech to Text Module
 
-Work in Progress.
-
 This source code have been implimented based on Ubuntu 22.04 (64bit)
-
 
 Running environment is as follows:
 ```
@@ -16,11 +13,12 @@ Python: 3.9
 Create Virtual Environment.
 ```
 conda create -n STT python=3.9
+conda activate STT
 ```
 
-Create Google Cloud account and download json key file
+Create Google Cloud account and download json key file.
+Follow the blog guide as below link.
 ```
-Follow the guide as following blog.
 https://ehdrh789.tistory.com/29
 ```
 
@@ -43,7 +41,7 @@ gcloud auth activate-service-account --key-file="/home/USERNAME/DOWNLOAD-FOLDER/
 ```
 
 ## How to run
-it is possible that an extra library needs to be installed to run this source code.
+It is possible that an extra library needs to be installed to run this source code.
 ```
 python ./workspace/GoogleSTT/stt_test1.py
 ```
