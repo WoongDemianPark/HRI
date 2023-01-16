@@ -44,7 +44,7 @@ conda install pytorch torchvision torchaudio cudatoolkit=11.5 -c pytorch -c cond
 ```
 
 ## How to run
-it is possible that an extra library needs to be installed to run this source code.
+It is possible that an extra library needs to be installed to run this source code.
 ```
 python main.py
 ```
@@ -75,7 +75,7 @@ Please cite [deepface](https://ieeexplore.ieee.org/document/9259802) and [DDRL](
   organization={IEEE}
 }
 ```
-* FOr Facial Expression Recognition a method of the following paper is used.
+* For Facial Expression Recognition a method of the following paper is used.
 Please cite [Shi et al.,](https://arxiv.org/abs/2103.10189) 
 ```BibTeX
 @article{shi2021learning,
