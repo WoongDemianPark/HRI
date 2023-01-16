@@ -101,3 +101,11 @@ Work in progress
 
 </br>
 
+# 6. Speech to Text Module Setting
+
+Work in progress
+
+[Follow the Speech to Text Module setting guide.](https://github.com/WoongDemianPark/HRI/tree/main/STT)
+
+</br>
+
