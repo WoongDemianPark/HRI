@@ -30,7 +30,7 @@ python main.py
 
 ## Citation
 * For Facial Expression Module, the following paper is used.
-Please cite [Shi et al.,](https://arxiv.org/abs/2103.10189) 
+Please cite [Park, Ung et al.,](https://ieeexplore.ieee.org/document/951553) 
 ```BibTeX
 @article{WoongDemianPark,
   title={Robot Facial Expression Framework for Enhancing Empathy in Human-Robot Interaction},
