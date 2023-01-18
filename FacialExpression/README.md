@@ -32,10 +32,10 @@ python main.py
 * For Facial Expression Module, the following paper is used.
 Please cite [Shi et al.,](https://arxiv.org/abs/2103.10189) 
 ```BibTeX
-@article{shi2021learning,
-  title={Learning to amend facial expression representation via de-albino and affinity},
-  author={Shi, Jiawei and Zhu, Songhao},
-  journal={arXiv preprint arXiv:2103.10189},
+@article{WoongDemianPark,
+  title={Robot Facial Expression Framework for Enhancing Empathy in Human-Robot Interaction},
+  author={Park, Ung and Minsoo, Kim and Youngeun, Jang and GiJae, Lee and KangGeon, Kim and Ig-Jae, Kim and Jongsuk, Choi},
+  journal={10.1109/RO-MAN50785.2021.9515533},
   year={2021}
 }
 ```
