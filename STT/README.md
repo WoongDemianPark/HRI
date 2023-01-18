@@ -48,12 +48,7 @@ python ./workspace/GoogleSTT/stt_test1.py
 
 ## Citation
 * For Speech to Text Module, following paper is used.
-Please cite [Shi et al.,](https://arxiv.org/abs/2103.10189) 
-```BibTeX
-@article{shi2021learning,
-  title={Learning to amend facial expression representation via de-albino and affinity},
-  author={Shi, Jiawei and Zhu, Songhao},
-  journal={arXiv preprint arXiv:2103.10189},
-  year={2021}
-}
+Please cite [Google Cloud Speech-to-Text Documentation](https://cloud.google.com/speech-to-text/docs/speech-to-text-requests) 
+```
+The content of the guide is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License. For details, see the Google Developers Site Policies.
 ```
