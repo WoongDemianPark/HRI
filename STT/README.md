@@ -50,5 +50,7 @@ python ./workspace/GoogleSTT/stt_test1.py
 * For Speech to Text Module, following paper is used.
 Please cite [Google Cloud Speech-to-Text Documentation](https://cloud.google.com/speech-to-text/docs/speech-to-text-requests) 
 ```
-The content of the guide is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License. For details, see the Google Developers Site Policies.
+The content of the guide is licensed under the Creative Commons Attribution 4.0 License,
+and code samples are licensed under the Apache 2.0 License.
+For details, see the Google Developers Site Policies.
 ```
