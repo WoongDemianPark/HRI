@@ -58,7 +58,7 @@ conda install pytorch torchvision torchaudio cudatoolkit=11.5 -c pytorch -c cond
 ## How to run
 It is possible that an extra library needs to be installed to run this source code.
 ```
-python facial_expression.py
+python main.py
 ```
 
 ## Citation
