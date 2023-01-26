@@ -19,7 +19,7 @@ conda activate FacialExpression
 Download Facial Animation files and save it into './FacialExpression/animation/'
 *IF THERE IS NO DIRECTORY, JUST MAKE IT'.
 ```
-Download link: work in progress
+Download link: https://drive.google.com/file/d/1DbmihnOoa8JsQ0F-tsN3ih31zcnak_Iw/view?usp=share_link
 ```
 
 ## How to run
