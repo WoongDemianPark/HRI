@@ -99,6 +99,7 @@
 
 </br>
 
+<<<<<<< HEAD
 # 6. Combined Robot Facial Module Setting
 
 [Follow Face Detection/Recognition/Expression Module setting guide.](https://github.com/WoongDemianPark/HRI/tree/main/FacialDetExp)
@@ -106,6 +107,9 @@
 </br>
 
 # 7. Speech to Text Module Setting
+=======
+# 6. Speech to Text Module Setting
+>>>>>>> 2b13bf886d1fca371540d01166ac441bc884344f
 
 [Follow the Speech to Text Module setting guide.](https://github.com/WoongDemianPark/HRI/tree/main/STT)
 
