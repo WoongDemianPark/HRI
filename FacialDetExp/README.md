@@ -48,16 +48,24 @@ conda install pytorch torchvision torchaudio cudatoolkit=11.5 -c pytorch -c cond
 * If there are some problems on above code, please follow the link for details.
 https://pytorch.kr/get-started/locally/
 
-Download FER (Facial Expression Recognition) model and save it into './models/RAF-DB/'
+Download FER (Facial Expression Recognition) model, extract and save it into './models/RAF-DB/'
 *IF THERE IS NO DIRECTORY, JUST MAKE IT'.
 ```
-Download link: https://drive.google.com/file/d/1SLiSQpYMpjUEMYHDg_dBu3ffQMrKtigf/view?usp=share_link
+External Download link: https://drive.google.com/file/d/1SLiSQpYMpjUEMYHDg_dBu3ffQMrKtigf/view?usp=share_link
+Internal Download link: http://gofile.me/3ZpsR/to38xWBfu
+```
+
+Download weight files, extract and save it into '~/HOME/.deepface/weight/'
+```
+External Download link: work on progress
+Internal Download link: http://gofile.me/3ZpsR/3UXBLajVv
 ```
 
 Download Facial Animation files and save it into './FacialExpression/animation/'
 *IF THERE IS NO DIRECTORY, JUST MAKE IT'.
 ```
-Download link: https://drive.google.com/file/d/1DbmihnOoa8JsQ0F-tsN3ih31zcnak_Iw/view?usp=share_link
+External Download link: https://drive.google.com/file/d/1DbmihnOoa8JsQ0F-tsN3ih31zcnak_Iw/view?usp=share_link
+Internal Download link: http://gofile.me/3ZpsR/IoeGklFkd
 ```
 
 ## How to run
