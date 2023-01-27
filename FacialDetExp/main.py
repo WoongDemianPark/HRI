@@ -6,32 +6,62 @@ import cv2
 import time
 import re
 
+import warnings
+
+warnings.filterwarnings("ignore")
+import numpy as np
+import torch.utils.data as data
+from torchvision import transforms
+import torch
+import pdb
+import argparse
+from src import Networks
+from sklearn.metrics import confusion_matrix
+from src.dataset import RafDataSet
+
 import os
+
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+backends = ['opencv', 'ssd', 'dlib', 'mtcnn', 'retinaface']
 
 from deepface import DeepFace
 from deepface.extendedmodels import Age
 from deepface.commons import functions, realtime, distance as dst
 from deepface.detectors import OpenCvWrapper
 
-file_list = ["FacialExpression/normal", "FacialExpression/happy",
-             "FacialExpression/surprise", "FacialExpression/sad",
-             "FacialExpression/angry"]
+file_list = ["FacialExpression/Normal", "FacialExpression/Happy",
+             "FacialExpression/Surprise", "FacialExpression/Sad",
+             "FacialExpression/Angry"]
 
 emotion_img_file_path = './FacialExpression/'
 
-input_shape = (224, 224); input_shape_x = input_shape[0]; input_shape_y = input_shape[1]
+input_shape = (224, 224);
+input_shape_x = input_shape[0];
+input_shape_y = input_shape[1]
 text_color = (255,255,255)
 frame_threshold = 1
 time_threshold = 0.1
 tic = time.time()
+# data_transforms_test = transforms.Compose([
+#     transforms.ToPILImage(),
+#     transforms.Resize((224, 224)),
+#     transforms.ToTensor(),
+#     transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])])
+
 emotion_model = DeepFace.build_model('Emotion')
 print("Emotion model loaded")
 
+# emotion_model = Networks.ResNet18_ARM___RAF()
+# print("Loading pretrained weights...models/RAF-DB/epoch59_acc0.9205.pth")
+# # checkpoint = torch.load('./models/RAF-DB/epoch59_acc0.9205.pth')
+# checkpoint = torch.load('./models/RAF-DB/epoch59_acc0.9205.pth', map_location=torch.device('cpu'))    # CPU-Only
+# emotion_model.load_state_dict(checkpoint["model_state_dict"], strict=False)
+# # emotion_model = emotion_model.cuda()
+# emotion_model = emotion_model.cpu()   # CPU-Only
+# print("Emotion model loaded")
 
 toc = time.time()
 print("Facial attibute analysis models loaded in ",toc-tic," seconds")
-
 
 pivot_img_size = 112 #face recognition result image
 
@@ -55,7 +85,7 @@ cv2.namedWindow('Robot output')
 cv2.setWindowProperty('Face detection and expression recognition', cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
 cv2.setWindowProperty('Robot output', cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
 
-cap = cv2.VideoCapture(2) #webcam
+cap = cv2.VideoCapture(0) #webcam
 _cnt_frame = 0
 while(True):
     _start = time.time()
@@ -227,7 +257,7 @@ while(True):
         e_img_path = emotion_img_file_path+max_emotion.split(' ')[0]+'/%d.jpg'%freezed_frame
         e_img = cv2.imread(e_img_path)
         if e_img is not None:
-            # cv2.imshow('Robot output', e_img)
+            cv2.imshow('Robot output', e_img)
             freezed_frame = freezed_frame + 1
         else:
             face_detected = False
@@ -238,7 +268,7 @@ while(True):
 
     else:
         cv2.imshow('Face detection and expression recognition',img)
-        # cv2.imshow('Robot output', normal_frame)
+        cv2.imshow('Robot output', normal_frame)
     print('Execution speed: %f sec'%(time.time()-_start))
 
     if cv2.waitKey(1) & 0xFF == ord('q'): #press q to quit
