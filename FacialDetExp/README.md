@@ -39,21 +39,26 @@ pip install networks tqdm
 Download FER (Facial Expression Recognition) model and save it into './models/RAF-DB/'
 *IF THERE IS NO DIRECTORY, JUST MAKE IT'.
 ```
-Download link: https://drive.google.com/file/d/1SLiSQpYMpjUEMYHDg_dBu3ffQMrKtigf/view?usp=share_link
+Download link: https://drive.google.com/file/d/1Gpdt7QhKKuoc8uTpJLZTGHIALsL6nz8H/view?usp=sharing
 ```
 
 Download Facial Animation files and save it into './FacialExpression/animation/'
 *IF THERE IS NO DIRECTORY, JUST MAKE IT'.
 ```
-Download link: https://drive.google.com/file/d/1DbmihnOoa8JsQ0F-tsN3ih31zcnak_Iw/view?usp=share_link
+Download link: work in progress
+```
+
+CUDA Version Check
+```
+nvcc --version
 ```
 
 Install PyTorch (Matching with CUDA version).
 ```
-nvcc --version
-https://pytorch.kr/get-started/locally/
 conda install pytorch torchvision torchaudio cudatoolkit=11.5 -c pytorch -c conda-forge
 ```
+* If there are some problems on above code, please follow the link for details.
+https://pytorch.kr/get-started/locally/
 
 ## How to run
 It is possible that an extra library needs to be installed to run this source code.
