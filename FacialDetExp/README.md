@@ -39,13 +39,13 @@ pip install networks tqdm
 Download FER (Facial Expression Recognition) model and save it into './models/RAF-DB/'
 *IF THERE IS NO DIRECTORY, JUST MAKE IT'.
 ```
-Download link: https://drive.google.com/file/d/1Gpdt7QhKKuoc8uTpJLZTGHIALsL6nz8H/view?usp=sharing
+Download link: https://drive.google.com/file/d/1SLiSQpYMpjUEMYHDg_dBu3ffQMrKtigf/view?usp=share_link
 ```
 
 Download Facial Animation files and save it into './FacialExpression/animation/'
 *IF THERE IS NO DIRECTORY, JUST MAKE IT'.
 ```
-Download link: work in progress
+Download link: https://drive.google.com/file/d/1DbmihnOoa8JsQ0F-tsN3ih31zcnak_Iw/view?usp=share_link
 ```
 
 CUDA Version Check
